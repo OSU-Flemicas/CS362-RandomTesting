@@ -1,0 +1,26 @@
+Bug 8: //valid mastercard range 2 prefix but bad checksum
+2470439339353253
+Bug 8 Found: 2714514444172279
+Bug 8 Found: 4586850990574545
+
+Bug 7:// this is a bug where cards of len 16 with AMEX prefixes and valid checksums are accepted
+3462712266746176
+3747518517895275
+3701980388864059
+Bug 7 Found: 3723956961997403
+Bug 7 Found: 3452485015167927
+
+Bug 1: // this is a bug where card numbers of len 16 that have valid checksums are accepted no matter the prefix
+Bug 1 Found: 7034555935844678
+Bug 1 Found: 1706637379027356
+Bug 1 Found: 3095353501698834
+Bug 1 Found: 8012015818390822
+Bug 1 Found: 7495071485020224
+Bug 1 Found: 6292149748993895
+Bug 1 Found: 2071546707057461
+Bug 1 Found: 2776298843383355
+Bug 1 Found: 7135633849799730
+Bug 1 Found: 1959982249610179
+Bug 1 Found: 2754001516803428
+Bug 1 Found: 6626500097170799
+Bug 1 Found: 6706643646083478
