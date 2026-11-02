@@ -36,20 +36,34 @@ def luhn_algo(card_num:str) ->int:
     checksum_digit = (10-(result % 10)) % 10
     return card_num + str(checksum_digit)       
 
-def generate_valid_MasterCard_num_range2() -> str:
+def generate_valid_MasterCard_range2() -> str:
     prefix:str = str(random.randint(2221, 2720))
     cardNumber:str = prefix
     for i in range(11):
-        cardNumber.append(str(random.randInt(0,9)))
+        cardNumber += str(random.randint(0,9))
     validCardNumber = luhn_algo(cardNumber)
     return validCardNumber
 
+def generate_invalid_MasterCard_range2() -> str:
+    prefix:str = str(random.randint(2221, 2720))
+    cardNumber:str = prefix
+    for i in range(12):
+        cardNumber += str(random.randint(0,9))
+    return cardNumber
+
+TESTS_TO_GENERATE:int = 100
 
 class TestCase(unittest.TestCase):
 
     def test_valid_MasterCard_range2(self):
-        # This test runs valid master cards in the 2221-2720 rangeg
-        credit_card_validator(generate_valid_MasterCard_num_range2())
+        # This test runs valid master cards in the 2221-2720 range
+        for i in range(TESTS_TO_GENERATE):
+            credit_card_validator(generate_valid_MasterCard_range2())
+
+    def test_invalid_MasterCard_range2(self):
+        # This test runs invalid master cards in the 2221-2720 range
+        for i in range(TESTS_TO_GENERATE):
+            credit_card_validator(generate_invalid_MasterCard_range2())
 
 
 if __name__ == '__main__':
